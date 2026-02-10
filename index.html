@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Architect - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="orbital-rings">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+    </div>
+
+    <div id="particles"></div>
+
+    <div class="container">
+        <!-- HERO SECTION -->
+        <section id="hero">
+            <div style="text-align: center; width: 100%;">
+                <div class="profile-container">
+                    <div class="profile-glow"></div>
+                    <div class="profile-ring">
+                        <img src="profile-pic.jpg" alt="My Profile" class="profile-photo">
+                    </div>
+                </div>
+                <h1>Jan Ax Benhur Santiago</h1>
+                <h2>Digital Architect</h2>
+                <p class="subtitle">Designing scalable systems for People, Process, and Progress</p>
+
+                <div class="btn-group">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>💻</span>
+                        View Work
+                    </a>
+                    <a href="Santiago_Jan_Ax_Benhur_Resume.pdf" target="_blank" class="btn btn-resume">
+                        <span>📄</span>
+                        View Resume
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>✉️</span>
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills">
+            <div style="width: 100%;">
+                <h2>CORE TECHNOLOGIES</h2>
+                <p class="text-center mb-4 skills-section-title">
+                    <span>✨</span> Powered by AI-assisted development
+                </p>
+
+                <div class="skills-section-title">
+                    <span>🔧</span> Backend & Scripting
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">🐍</div>
+                        <div class="skill-name">Python</div>
+                        <div class="skill-desc">Backend & Automation</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🌶️</div>
+                        <div class="skill-name">Flask</div>
+                        <div class="skill-desc">Web Apps & APIs</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🐘</div>
+                        <div class="skill-name">PHP</div>
+                        <div class="skill-desc">Web Development</div>
+                    </div>
+                </div>
+
+                <div class="skills-section-title">
+                    <span>🌐</span> Web Technologies
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <div class="skill-name">HTML/CSS</div>
+                        <div class="skill-desc">Responsive Design</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">⚡</div>
+                        <div class="skill-name">JavaScript</div>
+                        <div class="skill-desc">Frontend Logic</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">⚛️</div>
+                        <div class="skill-name">React</div>
+                        <div class="skill-desc">UI Components</div>
+                    </div>
+                </div>
+
+                <div class="skills-section-title">
+                    <span>🗄️</span> Data & Integrations
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">📊</div>
+                        <div class="skill-name">Google Sheets</div>
+                        <div class="skill-desc">Live Database</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">📝</div>
+                        <div class="skill-name">Google Forms</div>
+                        <div class="skill-desc">Surveys & Lead Gen</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">📈</div>
+                        <div class="skill-name">Excel</div>
+                        <div class="skill-desc">Data Processing</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">📄</div>
+                        <div class="skill-name">PDF Generation</div>
+                        <div class="skill-desc">Reports & Docs</div>
+                    </div>
+                </div>
+
+                <div class="skills-section-title">
+                    <span>🌡️</span> IoT & Hardware
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card iot">
+                        <div class="skill-icon">🥧</div>
+                        <div class="skill-name">Raspberry Pi</div>
+                        <div class="skill-desc">IoT Computing</div>
+                    </div>
+                    <div class="skill-card iot">
+                        <div class="skill-icon">📡</div>
+                        <div class="skill-name">Sensors</div>
+                        <div class="skill-desc">DHT22, BMP180</div>
+                    </div>
+                    <div class="skill-card iot">
+                        <div class="skill-icon">🔄</div>
+                        <div class="skill-name">Data Pipelines</div>
+                        <div class="skill-desc">Sensor to Web</div>
+                    </div>
+                </div>
+
+                <div class="skills-section-title">
+                    <span>🤖</span> AI Development Tools
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card ai">
+                        <div class="skill-icon">🧠</div>
+                        <div class="skill-name">Claude AI</div>
+                        <div class="skill-desc">AI-Assisted Coding</div>
+                    </div>
+                    <div class="skill-card ai">
+                        <div class="skill-icon">✨</div>
+                        <div class="skill-name">Gemini</div>
+                        <div class="skill-desc">AI Development</div>
+                    </div>
+                    <div class="skill-card ai">
+                        <div class="skill-icon">💬</div>
+                        <div class="skill-name">ChatGPT</div>
+                        <div class="skill-desc">Code Assistant</div>
+                    </div>
+                </div>
+
+                <div class="skills-section-title">
+                    <span>🚀</span> Deployment & Tools
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">📱</div>
+                        <div class="skill-name">Android</div>
+                        <div class="skill-desc">Mobile Apps</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🌐</div>
+                        <div class="skill-name">GitHub Pages</div>
+                        <div class="skill-desc">Static Hosting</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">📋</div>
+                        <div class="skill-name">Documentation</div>
+                        <div class="skill-desc">SOPs & Reports</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT GALLERY -->
+        <section id="projects" style="padding-top: 2rem;">
+            <div style="width: 100%;">
+                <h2>PROJECT GALLERY</h2>
+                <p class="text-center mb-4" style="color: #94a3b8;">Complete collection of my development projects</p>
+
+                <!-- Featured Systems - 6 tiles -->
+                <h3 class="section-subtitle">Featured Systems</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal('weather')">
+                        <img src="weather-monitoring.png" alt="Weather System" class="gallery-image">
+                        <div class="gallery-badge">FLASK/PYTHON</div>
+                        <div class="gallery-content">
+                            <h4 class="gallery-title">Weather Monitoring System</h4>
+                            <p class="gallery-desc">IoT weather station with Raspberry Pi and Flask dashboard</p>
+                            <div class="gallery-link-text">
+                                View Screenshots <span>→</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('certificate')">
+                        <img src="certificate-generator-1.png" alt="Certificate" class="gallery-image">
+                        <div class="gallery-badge">PYTHON/FLASK</div>
+                        <div class="gallery-content">
+                            <h4 class="gallery-title">Certificate Generator</h4>
+                            <p class="gallery-desc">Automated certificate generation with QR verification</p>
+                            <div class="gallery-link-text">
+                                View Screenshots <span>→</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('chat')">
+                        <img src="chat-system-1.png" alt="Chat System" class="gallery-image">
+                        <div class="gallery-badge">REAL-TIME</div>
+                        <div class="gallery-content">
+                            <h4 class="gallery-title">Chat System</h4>
+                            <p class="gallery-desc">Lightweight real-time messaging system</p>
+                            <div class="gallery-link-text">
+                                View Screenshots <span>→</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('radiis')">
+                        <img src="radiis-1.png" alt="RADIIS System" class="gallery-image">
+                        <div class="gallery-badge">WEB APP</div>
+                        <div class="gallery-content">
+                            <h4 class="gallery-title">RADIIS System</h4>
+                            <p class="gallery-desc">Web-based management system with data visualization</p>
+                            <div class="gallery-link-text">
+                                View Screenshots <span>→</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('crm')">
+                        <img src="CRM-analytics-dashboard-1.png" alt="CRM Dashboard" class="gallery-image">
+                        <div class="gallery-badge">FLASK/EXCEL</div>
+                        <div class="gallery-content">
+                            <h4 class="gallery-title">CRM Analytics Dashboard</h4>
+                            <p class="gallery-desc">Customer analytics with real-time metrics tracking</p>
+                            <div class="gallery-link-text">
+                                View Screenshots <span>→</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('careertalk')">
+                        <img src="careertalk-survey-1.png" alt="CareerTalk" class="gallery-image">
+                        <div class="gallery-badge">GOOGLE FORMS</div>
+                        <div class="gallery-content">
+                            <h4 class="gallery-title">CareerTalk Survey</h4>
+                            <p class="gallery-desc">Career guidance survey with path analysis</p>
+                            <div class="gallery-link-text">
+                                View Screenshots <span>→</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Survey Systems - 3 tiles -->
+                <h3 class="section-subtitle">Survey Systems</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal('events')">
+                        <img src="events-survey-1.png" alt="Events Survey" class="gallery-image">
+                        <div class="gallery-badge">GOOGLE FORMS</div>
+                        <div class="gallery-content">
+                            <h4 class="gallery-title">Events Survey</h4>
+                            <p class="gallery-desc">Event feedback and registration with analytics</p>
+                            <div class="gallery-link-text">View Screenshots <span>→</span></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('leadership')">
+                        <img src="leadership-survey-1.png" alt="Leadership Survey" class="gallery-image">
+                        <div class="gallery-badge">GOOGLE FORMS</div>
+                        <div class="gallery-content">
+                            <h4 class="gallery-title">Leadership Survey</h4>
+                            <p class="gallery-desc">Leadership assessment for development programs</p>
+                            <div class="gallery-link-text">View Screenshots <span>→</span></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('satisfaction')">
+                        <img src="satisfaction-survey-1.png" alt="Satisfaction Survey" class="gallery-image">
+                        <div class="gallery-badge">GOOGLE FORMS</div>
+                        <div class="gallery-content">
+                            <h4 class="gallery-title">Satisfaction Survey</h4>
+                            <p class="gallery-desc">Customer and employee satisfaction measurement</p>
+                            <div class="gallery-link-text">View Screenshots <span>→</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <div style="width: 100%;">
+                <h2>ESTABLISH CONNECTION</h2>
+                
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <span style="font-size: 3rem;">✉️</span>
+                    </div>
+
+                    <p class="text-center mb-2" style="color: #cbd5e1; font-size: 1.125rem;">
+                        Let's collaborate on something extraordinary
+                    </p>
+                    <p class="text-center" style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                        santiagojanaxbenhur@gmail.com
+                    </p>
+
+                    <div class="social-links">
+                        <a href="https://github.com/Tarantiago003" target="_blank" class="social-link" title="GitHub">
+                            <span style="font-size: 1.5rem;">🐙</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jan-ax-benhur-santiago-535b46396/" target="_blank" class="social-link" title="LinkedIn">
+                            <span style="font-size: 1.5rem;">💼</span>
+                        </a>
+                        <a href="mailto:santiagojanaxbenhur@gmail.com" class="social-link" title="Email">
+                            <span style="font-size: 1.5rem;">📧</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+            <span>💻</span>
+            <span>© Tarantiago</span>
+            <span style="color: #a78bfa;">2026</span>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <img id="lightbox-image" src="" alt="Full screen view" class="lightbox-image">
+        <div class="image-counter" id="image-counter"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

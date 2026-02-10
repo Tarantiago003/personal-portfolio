@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Gallery - Jan Ax Benhur Santiago</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            opacity: 0.2;
+            z-index: 0;
+            background-image: 
+                linear-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .header {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(to right, #38bdf8, #3b82f6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            border-radius: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-bottom: 2rem;
+        }
+
+        .back-btn:hover {
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 3rem 0 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid #38bdf8;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.5), rgba(30, 41, 59, 0.5));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            border-color: rgba(167, 139, 250, 0.6);
+            transform: translateY(-8px);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(167, 139, 250, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .gallery-content {
+            padding: 1.5rem;
+        }
+
+        .gallery-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .gallery-desc {
+            color: #94a3b8;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #38bdf8;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .gallery-link:hover {
+            color: #67e8f9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.875rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">
+            <span>←</span> Back to Portfolio
+        </a>
+
+        <div class="header">
+            <h1>PROJECT GALLERY</h1>
+            <p style="color: #94a3b8; font-size: 1.125rem;">Complete collection of my development projects</p>
+        </div>
+
+        <!-- Single Projects -->
+        <h2 class="section-title">Featured Systems</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="weather-monitoring.png" alt="Weather System" class="gallery-image">
+                <div class="gallery-badge">FLASK/PYTHON + IoT</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Weather Monitoring System</h3>
+                    <p class="gallery-desc">Full-stack IoT weather station using Raspberry Pi, DHT22 and BMP180 sensors with Flask dashboard</p>
+                    <a href="https://weather-demo.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/38bdf8?text=Chat+System" alt="Chat System" class="gallery-image">
+                <div class="gallery-badge">REAL-TIME</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Chat System</h3>
+                    <p class="gallery-desc">Lightweight real-time messaging system optimized for low-bandwidth environments</p>
+                    <a href="https://chat-demo.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x800/1e293b/10b981?text=Calculator+App" alt="Calculator" class="gallery-image">
+                <div class="gallery-badge">ANDROID</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Calculator App</h3>
+                    <p class="gallery-desc">Native Android calculator with scientific functions, history tracking, and Material Design</p>
+                    <a href="https://play.google.com/store/apps/details?id=your.app" target="_blank" class="gallery-link">
+                        View on Play Store <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/10b981?text=Survey+Systems" alt="Surveys" class="gallery-image">
+                <div class="gallery-badge">GOOGLE FORMS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Survey Systems</h3>
+                    <p class="gallery-desc">High-response survey systems using Google Forms with Flask dashboards for analysis</p>
+                    <a href="https://survey-demo.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lead Generation Systems -->
+        <h2 class="section-title">Lead Generation Systems (8 Projects)</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=Real+Estate+Lead+Capture" alt="Real Estate" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Real Estate Lead Capture</h3>
+                    <p class="gallery-desc">Property inquiry forms with automated lead qualification and CRM integration</p>
+                    <a href="https://realestate-leads.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=E-commerce+Lead+System" alt="E-commerce" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">E-commerce Lead System</h3>
+                    <p class="gallery-desc">Product interest tracking with cart abandonment recovery and email automation</p>
+                    <a href="https://ecommerce-leads.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=B2B+Lead+Qualifier" alt="B2B" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">B2B Lead Qualifier</h3>
+                    <p class="gallery-desc">Business lead qualification system with scoring algorithm and pipeline management</p>
+                    <a href="https://b2b-qualifier.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=SaaS+Landing+Page" alt="SaaS" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">SaaS Landing Page System</h3>
+                    <p class="gallery-desc">High-conversion landing pages with A/B testing and analytics integration</p>
+                    <a href="https://saas-landing.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=Marketing+Funnel+Builder" alt="Funnel" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Marketing Funnel Builder</h3>
+                    <p class="gallery-desc">Multi-step lead capture funnels with conversion tracking and analytics</p>
+                    <a href="https://funnel-builder.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=CRM+Integration+Hub" alt="CRM" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">CRM Integration Hub</h3>
+                    <p class="gallery-desc">Central hub for syncing leads across multiple CRM platforms and tools</p>
+                    <a href="https://crm-hub.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=Lead+Scoring+Engine" alt="Scoring" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Lead Scoring Engine</h3>
+                    <p class="gallery-desc">Automated lead scoring based on behavior, demographics, and engagement</p>
+                    <a href="https://lead-scoring.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=Auto-Response+System" alt="Auto-Response" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Auto-Response System</h3>
+                    <p class="gallery-desc">Intelligent email autoresponder with personalization and follow-up sequences</p>
+                    <a href="https://auto-response.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Dashboards -->
+        <h2 class="section-title">Analytics Dashboards (8 Projects)</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=Sales+Performance+Dashboard" alt="Sales" class="gallery-image">
+                <div class="gallery-badge">FLASK/EXCEL</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Sales Performance Dashboard</h3>
+                    <p class="gallery-desc">Real-time sales metrics, pipeline visualization, and revenue forecasting</p>
+                    <a href="https://sales-dash.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=Marketing+Analytics+Suite" alt="Marketing" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Marketing Analytics Suite</h3>
+                    <p class="gallery-desc">Campaign performance tracking, ROI analysis, and conversion metrics</p>
+                    <a href="https://marketing-analytics.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=Customer+Insights+Platform" alt="Customer" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Customer Insights Platform</h3>
+                    <p class="gallery-desc">Customer behavior analysis, segmentation, and lifetime value tracking</p>
+                    <a href="https://customer-insights.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=Financial+Reporting+System" alt="Financial" class="gallery-image">
+                <div class="gallery-badge">FLASK/EXCEL</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Financial Reporting System</h3>
+                    <p class="gallery-desc">Automated financial reports, expense tracking, and budget management</p>
+                    <a href="https://finance-reports.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=E-commerce+Analytics" alt="E-commerce Analytics" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">E-commerce Analytics</h3>
+                    <p class="gallery-desc">Product performance, inventory insights, and customer purchase patterns</p>
+                    <a href="https://ecom-analytics.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=Social+Media+Tracker" alt="Social" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Social Media Tracker</h3>
+                    <p class="gallery-desc">Multi-platform social analytics, engagement metrics, and growth tracking</p>
+                    <a href="https://social-tracker.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=KPI+Monitoring+Dashboard" alt="KPI" class="gallery-image">
+                <div class="gallery-badge">FLASK/EXCEL</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">KPI Monitoring Dashboard</h3>
+                    <p class="gallery-desc">Business KPI tracking, goal monitoring, and performance visualization</p>
+                    <a href="https://kpi-monitor.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/1e293b/a78bfa?text=Real-time+Metrics+Hub" alt="Metrics" class="gallery-image">
+                <div class="gallery-badge">FLASK/SHEETS</div>
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Real-time Metrics Hub</h3>
+                    <p class="gallery-desc">Live business metrics aggregation from multiple data sources</p>
+                    <a href="https://realtime-metrics.example.com" target="_blank" class="gallery-link">
+                        View Live Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+            <span>💻</span>
+            <span>© Tarantiago</span>
+            <span style="color: #a78bfa;">2026</span>
+        </div>
+    </footer>
+</body>
+</html>
